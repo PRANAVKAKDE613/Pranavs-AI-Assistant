@@ -1,0 +1,193 @@
+{
+  "candidate": {
+    "name": "Pranav Kakde",
+    "role": "Software Engineer & AI/ML Engineer",
+    "graduation_year": 2026,
+    "degree": "B.E. in Information Technology",
+    "college": "Pimpri Chinchwad College of Engineering and Research (PCCOER), Pune",
+    "cgpa": "8.7 / 10",
+    "location": "Pune, Maharashtra, India",
+    "email": "kakdepranav993@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/pranav-kakde-351a26205/",
+    "github": "https://github.com/PRANAVKAKDE613",
+    "leetcode": "https://leetcode.com/u/PRANAV_KAKDE/",
+    "leetcode_solved": "200+ problems",
+    "portfolio": "https://github.com/PRANAVKAKDE613/Portfolio1",
+    "tracks": [
+      "Backend & Java Full-Stack Development (Spring Boot, React.js, MySQL, MongoDB, Microservices, WebSockets)",
+      "AI/ML & GenAI Engineering (LangChain, LangGraph, RAG, LLM Agents, FastAPI, PyTorch, Vector DBs)"
+    ],
+    "resumes": {
+      "java_backend": "/resumes/Pranav_Kakde_Java_Backend_Resume.pdf",
+      "aiml_genai": "/resumes/Pranav_Kakde_AIML_GenAI_Resume.pdf"
+    }
+  },
+  "education": {
+    "degree": "Bachelor of Engineering (B.E.) in Information Technology",
+    "institution": "Pimpri Chinchwad College of Engineering and Research (PCCOER), Pune",
+    "timeline": "2022 – 2026 (Final Year)",
+    "cgpa": "8.7 / 10",
+    "key_coursework": [
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming (Java)",
+      "Database Management Systems (SQL & NoSQL)",
+      "Operating Systems",
+      "Computer Networks",
+      "Software Engineering & Agile Methodologies",
+      "Machine Learning & Artificial Intelligence"
+    ]
+  },
+  "skills": {
+    "languages": ["Java", "Python", "JavaScript", "TypeScript", "C", "SQL", "HTML5", "CSS3"],
+    "backend_and_fullstack": [
+      "Spring Boot", "Spring Security", "Hibernate / JPA", "RESTful APIs", "Microservices",
+      "Node.js", "Express.js", "React.js", "Next.js", "WebSockets (STOMP / SockJS)", "JDBC"
+    ],
+    "aiml_and_genai": [
+      "LangChain", "LangGraph", "LLM Agents", "RAG (Retrieval-Augmented Generation)", "RAGAs",
+      "LoRA Fine-Tuning", "Vector DBs (ChromaDB, FAISS, Pinecone)", "FastAPI", "PyTorch",
+      "TensorFlow", "Keras", "OpenCV", "Grad-CAM", "CNN-LSTM", "Hugging Face", "OpenAI APIs", "Groq"
+    ],
+    "cloud_databases_devops": [
+      "MySQL", "MongoDB", "PostgreSQL", "Redis", "AWS (S3, Glue, Redshift)", "Docker",
+      "Prometheus", "Grafana", "Git", "GitHub Actions", "Vercel", "Linux", "Postman"
+    ]
+  },
+  "certifications": [
+    "Oracle Cloud Infrastructure (OCI) AI Foundations Associate (2025)",
+    "Generative AI & LLM Engineering Certification",
+    "Java & Python Software Development Certifications"
+  ],
+  "achievements": [
+    "2nd Place at Concept Carnival 2023 for Harvest Hub (agri-supply chain platform connecting farmers directly to buyers)",
+    "200+ LeetCode problems solved",
+    "Technical Contributor & Lead at ACM PCCOER Technical Club"
+  ],
+  "projects": [
+    {
+      "id": "real-time-chat",
+      "title": "Real-Time Chat Application",
+      "category": "Backend & Full-Stack Projects",
+      "tech_stack": ["Spring Boot", "React.js", "MongoDB", "WebSocket", "STOMP", "SockJS"],
+      "description": "Full-stack real-time messaging platform providing instant bi-directional STOMP/SockJS communication over WebSockets, reactive MongoDB persistence, and active presence tracking.",
+      "github_url": "https://github.com/PRANAVKAKDE613/ChatApp",
+      "live_demo_url": "https://chat-app-frontend-seven-eosin.vercel.app",
+      "impact": [
+        "Engineered low-latency bidirectional chat streaming supporting 100+ concurrent socket connections over STOMP/SockJS.",
+        "Integrated reactive MongoDB persistence layer, delivering sub-50ms message storage and chat history retrieval.",
+        "Deployed modular React.js user interface featuring live presence indicators and auto-reconnecting socket sessions."
+      ]
+    },
+    {
+      "id": "budgetwise",
+      "title": "BudgetWise – Smart Personal Finance Manager",
+      "category": "Backend & Full-Stack Projects",
+      "tech_stack": ["React.js", "Spring Boot", "MySQL", "REST API", "JWT", "Chart.js"],
+      "description": "Comprehensive personal financial management application featuring stateless JWT authentication, fine-grained role-based access control (RBAC), transaction tracking, and dynamic visual analytics.",
+      "github_url": "https://github.com/PRANAVKAKDE613/Budgetwise",
+      "live_demo_url": null,
+      "impact": [
+        "Developed stateless RESTful micro-services with Spring Boot and JWT security, securing 15+ API endpoints with RBAC.",
+        "Engineered relational MySQL database schema with optimized indexing for multi-category transaction analytics.",
+        "Integrated interactive visual dashboards using React and Chart.js for real-time spending insights."
+      ]
+    },
+    {
+      "id": "irctc-backend",
+      "title": "IRCTC Backend – Railway Ticket Booking System",
+      "category": "Backend & Full-Stack Projects",
+      "tech_stack": ["Java", "JDBC", "MySQL", "HTML", "REST API"],
+      "description": "Enterprise-grade railway reservation backend handling train scheduling, seat allocation workflows, dynamic waitlist management, automated queue ordering, and multi-tier fare calculation.",
+      "github_url": "https://github.com/PRANAVKAKDE613/IRCTC-backend",
+      "live_demo_url": null,
+      "impact": [
+        "Designed ACID-compliant transaction manager handling concurrent seat reservations and automated waitlist priority queues.",
+        "Implemented multi-tier fare calculation algorithm and train route lookup using optimized MySQL queries.",
+        "Enforced role-based authentication separating administrator capabilities from passenger management actions."
+      ]
+    },
+    {
+      "id": "fundchain",
+      "title": "FundChain – Decentralized Crowdfunding Platform",
+      "category": "Backend & Full-Stack Projects",
+      "tech_stack": ["Solidity", "Ethereum", "Web3.js", "React.js", "Smart Contracts"],
+      "description": "Trustless decentralized crowdfunding platform leveraging Ethereum smart contracts for transparent milestone-based campaign creation, contribution tracking, and automated fund releases.",
+      "github_url": "https://github.com/PRANAVKAKDE613/fundchain",
+      "live_demo_url": "https://fundchain-orcin.vercel.app",
+      "impact": [
+        "Authored and tested Ethereum smart contracts in Solidity for trustless milestone-based fund releasing.",
+        "Integrated Web3.js with MetaMask wallet authentication and dynamic React frontend for live campaign state updates."
+      ]
+    },
+    {
+      "id": "techsight",
+      "title": "TechSight – Agentic Financial Research Analyst",
+      "category": "AI/ML & GenAI Projects",
+      "tech_stack": ["LangChain", "LangGraph", "GPT-4o-mini", "AWS S3", "ChromaDB", "LoRA", "RAGAs", "Streamlit"],
+      "description": "Autonomous multi-agent financial research assistant that ingests SEC 10-K filings, executes multi-step financial ratio analysis, retrieves relevant disclosures via vector search, and measures response quality.",
+      "github_url": "https://github.com/PRANAVKAKDE613/TechSight",
+      "live_demo_url": "https://techsight-financial-analyst.streamlit.app",
+      "impact": [
+        "Built a multi-agent LangGraph workflow reducing financial report analysis time from hours to under 30 seconds.",
+        "Optimized vector retrieval using ChromaDB & AWS S3 with LoRA fine-tuning, achieving 94% retrieval accuracy and near-zero hallucination rate evaluated via RAGAs.",
+        "Delivered interactive research interface allowing custom query execution over complex financial SEC 10-K filings."
+      ]
+    },
+    {
+      "id": "unified-llm-gateway",
+      "title": "Unified LLM Gateway – Production-Grade AI Proxy Service",
+      "category": "AI/ML & GenAI Projects",
+      "tech_stack": ["Python", "FastAPI", "Redis", "PostgreSQL", "Prometheus", "Grafana", "Docker"],
+      "description": "High-performance multi-provider LLM proxy service featuring standard OpenAI API shape compatibility, two-layer caching (exact SHA-256 and semantic cosine similarity), provider fallback routing, and token cost metering.",
+      "github_url": "https://github.com/PRANAVKAKDE613/Unified-LLM-Gateway",
+      "live_demo_url": null,
+      "impact": [
+        "Implemented two-layer caching (exact SHA-256 and semantic cosine similarity threshold 0.92 in Redis), reducing API latency by up to 85% for repeat queries.",
+        "Built automatic provider failover and budget-enforcing token cost metering across OpenAI, Anthropic, and Groq endpoints.",
+        "Exposed Prometheus metrics and Grafana dashboards for real-time throughput, error rate, and token spending analytics."
+      ]
+    },
+    {
+      "id": "medrag",
+      "title": "MedRAG – Modular Medical Document Processing & Information Service",
+      "category": "AI/ML & GenAI Projects",
+      "tech_stack": ["LangChain", "OpenAI APIs", "AWS Glue", "ChromaDB", "SQL", "OCR", "FAISS"],
+      "description": "Retrieval-Augmented Generation (RAG) system specialized for clinical & medical document QA, processing PDF/DOCX/TXT files with strict context constraint to prevent medical hallucinations.",
+      "github_url": "https://github.com/PRANAVKAKDE613/MedRag",
+      "live_demo_url": null,
+      "impact": [
+        "Built an end-to-end medical document ingestion pipeline supporting PDF/DOCX/TXT files using OCR and hybrid retrieval (FAISS/ChromaDB).",
+        "Enforced strict context-constrained prompt boundaries, eliminating external knowledge hallucination on medical queries.",
+        "Integrated AWS Glue and SQL data transformation pipelines to structure unstructured clinical data for high-precision query answering."
+      ]
+    },
+    {
+      "id": "finmcp",
+      "title": "FinMCP – MCP Server for Real-Time Financial Intelligence",
+      "category": "AI/ML & GenAI Projects",
+      "tech_stack": ["LangChain", "FastAPI", "Amazon S3", "Amazon Redshift", "SEC EDGAR", "yFinance"],
+      "description": "Model Context Protocol (MCP) server delivering real-time financial market data, SEC filings, and data warehouse integration directly to LLM agent orchestrators.",
+      "github_url": "https://github.com/PRANAVKAKDE613/FinMCP",
+      "live_demo_url": null,
+      "impact": [
+        "Developed an MCP-compliant tool server integrating yFinance and SEC EDGAR APIs for agentic market intelligence retrieval.",
+        "Connected Amazon S3 and Redshift data warehouses to serve historical stock metrics and SEC 10-K/10-Q financial statements.",
+        "Standardized JSON-RPC protocol interfaces allowing seamless tool consumption by LangChain/LangGraph agent runtimes."
+      ]
+    },
+    {
+      "id": "violence-detection-xai",
+      "title": "Violence Detection with Explainable AI",
+      "category": "AI/ML & GenAI Projects",
+      "tech_stack": ["Python", "CNN-LSTM", "Grad-CAM", "OpenCV", "Telegram API", "MobileNetV2"],
+      "description": "Computer vision deep learning system for automated video surveillance violence detection featuring Grad-CAM explainability heatmaps and automated Telegram incident alerting.",
+      "github_url": "https://github.com/PRANAVKAKDE613/violence-detection-xai",
+      "live_demo_url": null,
+      "impact": [
+        "Achieved 92.4% detection accuracy on surveillance video clips using MobileNetV2 spatial feature extractor combined with LSTM temporal sequence modeling.",
+        "Integrated Grad-CAM explainable AI heatmaps to visually highlight regions triggering high-confidence violence predictions.",
+        "Implemented real-time video stream ingestion via OpenCV with automated Telegram bot alert notifications."
+      ]
+    }
+  ]
+}

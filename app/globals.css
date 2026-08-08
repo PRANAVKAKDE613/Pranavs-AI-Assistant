@@ -1,0 +1,115 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-soft: #efebe2;
+  --ink: #151514;
+  --muted: #6f6a61;
+  --line: #ded8cc;
+  --accent: #176b63;
+  --accent-dark: #0f4c46;
+  --coral: #c95f43;
+}
+
+.dark {
+  --bg: #141412;
+  --surface: #1d1c19;
+  --surface-soft: #26231e;
+  --ink: #f5f1e8;
+  --muted: #b4aa9a;
+  --line: #3b352d;
+  --accent: #66c6b7;
+  --accent-dark: #8ad9cd;
+  --coral: #f09a78;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Markdown Typography */
+.prose-assistant p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+.prose-assistant p:last-child {
+  margin-bottom: 0;
+}
+.prose-assistant ul, .prose-assistant ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+}
+.prose-assistant ul {
+  list-style-type: disc;
+}
+.prose-assistant ol {
+  list-style-type: decimal;
+}
+.prose-assistant li {
+  margin-bottom: 0.25rem;
+}
+.prose-assistant a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+.prose-assistant a:hover {
+  opacity: 0.85;
+}
+.prose-assistant code {
+  background: var(--surface-soft);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.prose-assistant pre {
+  background: var(--surface-soft);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--line);
+}
+.prose-assistant pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Cursor Pulsing Animation for Streaming */
+@keyframes pulse-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.streaming-cursor::after {
+  content: '▋';
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  animation: pulse-cursor 0.8s infinite;
+}
