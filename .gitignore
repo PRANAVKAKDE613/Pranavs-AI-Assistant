@@ -27,3 +27,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# personal interview notes & docs
+*.docx
+Pranav_AI_Assistant_Interview_Guide.docx
