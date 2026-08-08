@@ -45,9 +45,15 @@ ${JSON.stringify(knowledgeBase, null, 2)}
 ==================================================
 `;
 
+const CANDIDATE_MODELS = [
+  "gemini-2.0-flash",
+  "gemini-1.5-flash-latest",
+  "gemini-1.5-pro-latest",
+  "gemini-1.5-pro",
+];
+
 export async function POST(req: NextRequest) {
   try {
-    // Determine client IP for rate limiting
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "127.0.0.1";
     const rateLimit = getRateLimitInfo(ip);
 
@@ -72,15 +78,9 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
-    // If Gemini API key is available, use Google Generative AI streaming
     if (apiKey) {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-        systemInstruction: SYSTEM_INSTRUCTION,
-      });
 
-      // Format conversation history for Gemini
       const formattedHistory = messages.slice(0, -1).map((msg: { role: string; content: string }) => ({
         role: msg.role === "assistant" ? "model" : "user",
         parts: [{ text: msg.content }],
@@ -88,40 +88,52 @@ export async function POST(req: NextRequest) {
 
       const latestUserMessage = messages[messages.length - 1].content;
 
-      const chatSession = model.startChat({
-        history: formattedHistory,
-      });
+      // Try candidate models in sequence
+      for (const modelName of CANDIDATE_MODELS) {
+        try {
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            systemInstruction: SYSTEM_INSTRUCTION,
+          });
 
-      const resultStream = await chatSession.sendMessageStream(latestUserMessage);
+          const chatSession = model.startChat({
+            history: formattedHistory,
+          });
 
-      // Stream tokens using Server-Sent Events / Web ReadableStream
-      const encoder = new TextEncoder();
-      const stream = new ReadableStream({
-        async start(controller) {
-          try {
-            for await (const chunk of resultStream.stream) {
-              const text = chunk.text();
-              if (text) {
-                controller.enqueue(encoder.encode(text));
+          const resultStream = await chatSession.sendMessageStream(latestUserMessage);
+
+          const encoder = new TextEncoder();
+          const stream = new ReadableStream({
+            async start(controller) {
+              try {
+                for await (const chunk of resultStream.stream) {
+                  const text = chunk.text();
+                  if (text) {
+                    controller.enqueue(encoder.encode(text));
+                  }
+                }
+                controller.close();
+              } catch (err) {
+                controller.error(err);
               }
-            }
-            controller.close();
-          } catch (err) {
-            controller.error(err);
-          }
-        },
-      });
+            },
+          });
 
-      return new Response(stream, {
-        headers: {
-          "Content-Type": "text/event-stream; charset=utf-8",
-          "Cache-Control": "no-cache, no-transform",
-          Connection: "keep-alive",
-        },
-      });
+          return new Response(stream, {
+            headers: {
+              "Content-Type": "text/event-stream; charset=utf-8",
+              "Cache-Control": "no-cache, no-transform",
+              Connection: "keep-alive",
+            },
+          });
+        } catch (err: any) {
+          console.warn(`Model ${modelName} failed, trying next model:`, err?.message);
+          continue;
+        }
+      }
     }
 
-    // Fallback response generator if API key is not set in environment (for smooth local demonstration)
+    // Fallback response generator if no API key or model calls failed
     const lastMsg = messages[messages.length - 1].content.toLowerCase();
     let fallbackAnswer = "";
 
@@ -190,7 +202,6 @@ You can also download his resumes directly:
 Or reach out to him via email at [kakdepranav993@gmail.com](mailto:kakdepranav993@gmail.com).`;
     }
 
-    // Stream fallback tokens to simulate responsive LLM typing
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
@@ -198,7 +209,7 @@ Or reach out to him via email at [kakdepranav993@gmail.com](mailto:kakdepranav99
         for (let i = 0; i < words.length; i++) {
           const chunk = (i === 0 ? "" : " ") + words[i];
           controller.enqueue(encoder.encode(chunk));
-          await new Promise((r) => setTimeout(r, 20)); // simulated token delay
+          await new Promise((r) => setTimeout(r, 20));
         }
         controller.close();
       },
